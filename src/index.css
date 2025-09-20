@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* EcoQuest Pixel Medieval Theme Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cinzel:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Medieval Pixel Art Color Palette */
+    --background: 33 30% 8%;
+    --foreground: 43 62% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 25 35% 12%;
+    --card-foreground: 43 62% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 25 35% 12%;
+    --popover-foreground: 43 62% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Rich Gold */
+    --primary: 43 75% 58%;
+    --primary-foreground: 25 35% 12%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Warm Brown */
+    --secondary: 30 45% 20%;
+    --secondary-foreground: 43 62% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Dark Earth */
+    --muted: 25 25% 15%;
+    --muted-foreground: 43 35% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Forest Green */
+    --accent: 82 35% 28%;
+    --accent-foreground: 43 62% 85%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Game UI Colors */
+    --pixel-gold: 43 85% 65%;
+    --pixel-bronze: 25 60% 45%;
+    --pixel-forest: 82 45% 25%;
+    --pixel-earth: 30 35% 25%;
+    --pixel-shadow: 25 20% 10%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive States */
+    --hover-glow: 43 85% 65%;
+    --active-pulse: 43 95% 75%;
 
-    --radius: 0.5rem;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 43 62% 85%;
+
+    --border: 30 35% 25%;
+    --input: 25 35% 12%;
+    --ring: 43 75% 58%;
+
+    --radius: 4px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -53,44 +69,19 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Gradients */
+    --gradient-medieval: linear-gradient(135deg, hsl(var(--pixel-gold)), hsl(var(--pixel-bronze)));
+    --gradient-earth: linear-gradient(180deg, hsl(var(--pixel-earth)), hsl(var(--pixel-shadow)));
+    --gradient-forest: linear-gradient(45deg, hsl(var(--pixel-forest)), hsl(var(--accent)));
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Shadows & Effects */
+    --shadow-pixel: 0 4px 8px hsl(var(--pixel-shadow) / 0.6);
+    --shadow-glow: 0 0 20px hsl(var(--pixel-gold) / 0.3);
+    --border-ornate: 2px solid hsl(var(--pixel-bronze));
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition-medieval: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -100,6 +91,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medieval;
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--pixel-shadow) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--pixel-earth) / 0.1) 0%, transparent 50%);
+  }
+
+  /* Pixel Perfect Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--pixel-shadow));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--pixel-bronze));
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--pixel-gold));
+  }
+}
+
+@layer components {
+  /* Pixel Art Button Styles */
+  .btn-medieval {
+    @apply relative px-6 py-3 font-pixel text-sm font-bold tracking-wider uppercase;
+    @apply bg-gradient-to-b from-pixel-gold to-pixel-bronze text-pixel-shadow;
+    @apply border-2 border-pixel-bronze rounded-none;
+    @apply transition-all duration-200 hover:from-pixel-bronze hover:to-pixel-gold;
+    @apply hover:shadow-glow active:scale-95;
+    box-shadow: 
+      inset 0 1px 0 hsl(var(--pixel-gold)),
+      inset 0 -1px 0 hsl(var(--pixel-shadow)),
+      var(--shadow-pixel);
+  }
+
+  .btn-medieval:before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-pixel-shadow/20 rounded-none;
+  }
+
+  /* Ornate Card Frame */
+  .card-medieval {
+    @apply relative bg-card border-2 border-pixel-bronze rounded-none p-6;
+    @apply shadow-pixel backdrop-blur-sm;
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--pixel-earth)));
+    box-shadow: 
+      inset 0 1px 0 hsl(var(--pixel-bronze) / 0.5),
+      var(--shadow-pixel);
+  }
+
+  .card-medieval:before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-medieval rounded-none opacity-75 -z-10;
+  }
+
+  /* Pixel Typography */
+  .text-pixel-xl {
+    @apply font-pixel text-2xl leading-tight tracking-wider;
+    text-shadow: 2px 2px 0 hsl(var(--pixel-shadow));
+  }
+
+  .text-medieval-title {
+    @apply font-display text-4xl md:text-6xl font-bold text-transparent bg-clip-text;
+    background-image: var(--gradient-medieval);
+    text-shadow: 2px 2px 4px hsl(var(--pixel-shadow));
   }
 }
