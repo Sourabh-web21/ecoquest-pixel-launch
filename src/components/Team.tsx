@@ -76,15 +76,15 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 px-4 bg-gray-900">
+    <section id="team" className="py-20 px-4 bg-gradient-earth">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="eco-title text-4xl md:text-5xl mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-pixel-gold mb-6">
             Our Guild
           </h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed">
+          <div className="w-24 h-1 bg-gradient-medieval mx-auto mb-8"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Meet the passionate team of developers, artists, scientists, and educators 
             working together to create the ultimate climate education adventure.
           </p>
@@ -95,33 +95,31 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div 
               key={index}
-              className="nes-container eco-card-hover"
+              className="card-medieval group hover:scale-105 transition-all duration-300 hover:shadow-glow"
             >
               {/* Avatar */}
               <div className="relative mb-6">
                 <div 
-                  className="w-24 h-24 mx-auto rounded-full border-4 border-yellow-400 bg-cover bg-center bg-no-repeat"
+                  className="w-24 h-24 mx-auto rounded-full border-4 border-pixel-bronze bg-cover bg-center bg-no-repeat"
                   style={{ 
                     backgroundImage: `url(${teamPortraits})`,
                     backgroundPosition: `${(index % 3) * 33.33}% ${Math.floor(index / 3) * 50}%`
                   }}
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                  <span className="nes-badge is-icon">
-                    <span className="is-primary text-xs">{member.title}</span>
-                  </span>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pixel-gold text-pixel-shadow px-3 py-1 rounded-full">
+                  <span className="font-pixel text-xs">{member.title}</span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="text-center">
-                <h3 className="eco-title text-lg mb-2">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                   {member.name}
                 </h3>
-                <p className="text-yellow-400 font-bold mb-4">
+                <p className="text-pixel-gold font-medium mb-4">
                   {member.role}
                 </p>
-                <p className="text-sm leading-relaxed mb-4">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {member.description}
                 </p>
                 
@@ -130,9 +128,9 @@ const Team = () => {
                   {member.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className="nes-badge text-xs"
+                      className="bg-pixel-earth/50 text-pixel-gold text-xs px-2 py-1 rounded border border-pixel-bronze"
                     >
-                      <span className="is-dark">{skill}</span>
+                      {skill}
                     </span>
                   ))}
                 </div>
@@ -142,7 +140,7 @@ const Team = () => {
                   {member.social.github && (
                     <a 
                       href={member.social.github}
-                      className="nes-btn is-primary p-2"
+                      className="p-2 rounded-full bg-pixel-shadow text-pixel-gold hover:bg-pixel-bronze transition-colors"
                       aria-label={`${member.name} GitHub`}
                     >
                       <Github className="w-4 h-4" />
@@ -151,7 +149,7 @@ const Team = () => {
                   {member.social.linkedin && (
                     <a 
                       href={member.social.linkedin}
-                      className="nes-btn is-primary p-2"
+                      className="p-2 rounded-full bg-pixel-shadow text-pixel-gold hover:bg-pixel-bronze transition-colors"
                       aria-label={`${member.name} LinkedIn`}
                     >
                       <Linkedin className="w-4 h-4" />
@@ -160,7 +158,7 @@ const Team = () => {
                   {member.social.email && (
                     <a 
                       href={`mailto:${member.social.email}`}
-                      className="nes-btn is-primary p-2"
+                      className="p-2 rounded-full bg-pixel-shadow text-pixel-gold hover:bg-pixel-bronze transition-colors"
                       aria-label={`Email ${member.name}`}
                     >
                       <Mail className="w-4 h-4" />
@@ -173,23 +171,26 @@ const Team = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="nes-container text-center mt-16">
-          <h3 className="eco-title text-2xl mb-4">
+        <div className="card-medieval text-center mt-16">
+          <h3 className="font-display text-2xl font-semibold text-pixel-gold mb-4">
             Join Our Quest
           </h3>
-          <p className="mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             We're always looking for passionate individuals who want to make a difference 
             in climate education. Whether you're a developer, educator, or climate advocate, 
             there's a place for you in our guild.
           </p>
           <a 
             href="mailto:team@ecoquest.game" 
-            className="nes-btn is-success"
+            className="btn-medieval inline-flex items-center"
           >
-            <Mail className="inline w-4 h-4 mr-2" />
+            <Mail className="w-4 h-4 mr-2" />
             Get in Touch
           </a>
         </div>
       </div>
     </section>
+  );
+};
+
 export default Team;

@@ -29,24 +29,24 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="eco-title text-4xl md:text-5xl mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-pixel-gold mb-6">
             About EcoQuest
           </h2>
-          <div className="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed">
+          <div className="w-24 h-1 bg-gradient-medieval mx-auto mb-8"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Where medieval adventure meets modern climate science. Our innovative game transforms 
             environmental education into an epic quest that inspires action and understanding.
           </p>
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left: Story */}
-          <div className="nes-container">
-            <h3 className="eco-title text-2xl mb-6">
+          <div className="card-medieval">
+            <h3 className="text-2xl font-display font-semibold text-pixel-gold mb-6">
               The Quest Begins
             </h3>
-            <div className="space-y-4 leading-relaxed">
+            <div className="space-y-4 text-foreground/90 leading-relaxed">
               <p>
                 In the mystical realm of EcoQuest, players embark on an extraordinary journey where 
                 environmental knowledge becomes magical power. As climate heroes, students explore 
@@ -66,51 +66,47 @@ const About = () => {
           </div>
 
           {/* Right: Features Grid */}
-          <div className="grid gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="nes-container eco-card-hover"
+                className="card-medieval hover:scale-105 transition-transform duration-300 group"
               >
-                <div className="flex items-start gap-4">
-                  <div className="text-yellow-400 mt-1">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-2">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+                <div className="text-pixel-gold mb-4 group-hover:animate-pulse">
+                  {feature.icon}
                 </div>
+                <h4 className="font-display font-semibold text-lg mb-3 text-foreground">
+                  {feature.title}
+                </h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Impact Stats */}
-        <div className="nes-container is-dark">
+        <div className="card-medieval bg-gradient-earth">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="eco-title text-3xl mb-2">15+</div>
-              <div className="mb-1">Climate Topics Covered</div>
-              <div className="text-sm opacity-75">
+              <div className="font-pixel text-3xl text-pixel-gold mb-2">15+</div>
+              <div className="text-foreground/80">Climate Topics Covered</div>
+              <div className="text-sm text-muted-foreground mt-1">
                 From renewable energy to biodiversity
               </div>
             </div>
             <div>
-              <div className="eco-title text-3xl mb-2">8-16</div>
-              <div className="mb-1">Age Range</div>
-              <div className="text-sm opacity-75">
+              <div className="font-pixel text-3xl text-pixel-gold mb-2">8-16</div>
+              <div className="text-foreground/80">Age Range</div>
+              <div className="text-sm text-muted-foreground mt-1">
                 Adaptable difficulty levels
               </div>
             </div>
             <div>
-              <div className="eco-title text-3xl mb-2">100%</div>
-              <div className="mb-1">Open Source</div>
-              <div className="text-sm opacity-75">
+              <div className="font-pixel text-3xl text-pixel-gold mb-2">100%</div>
+              <div className="text-foreground/80">Open Source</div>
+              <div className="text-sm text-muted-foreground mt-1">
                 Free for educational use
               </div>
             </div>
@@ -118,4 +114,7 @@ const About = () => {
         </div>
       </div>
     </section>
+  );
+};
+
 export default About;
