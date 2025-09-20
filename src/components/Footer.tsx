@@ -37,22 +37,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-earth border-t border-pixel-bronze">
+    <footer className="bg-gray-900 border-t border-yellow-400">
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-medieval rounded-full flex items-center justify-center">
-                <Sword className="w-7 h-7 text-pixel-shadow" />
+              <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                <Sword className="w-7 h-7 text-black" />
               </div>
               <div>
-                <span className="font-pixel text-xl text-pixel-gold">EcoQuest</span>
-                <div className="text-sm text-muted-foreground font-display">Climate Adventure</div>
+                <span className="eco-title text-xl">EcoQuest</span>
+                <div className="text-sm opacity-75">Climate Adventure</div>
               </div>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-6 opacity-75">
               Empowering the next generation through epic environmental education adventures.
             </p>
             
@@ -62,7 +62,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="p-2 rounded-full bg-pixel-shadow text-pixel-gold hover:bg-pixel-bronze transition-colors duration-200"
+                  className="nes-btn is-primary p-2"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -74,13 +74,13 @@ const Footer = () => {
           {/* Links Sections */}
           <div className="lg:col-span-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <h4 className="font-display font-semibold text-pixel-gold mb-4">Game</h4>
+              <h4 className="eco-title mb-4">Game</h4>
               <ul className="space-y-2">
                 {footerLinks.game.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="text-muted-foreground hover:text-pixel-gold transition-colors duration-200 text-sm"
+                      className="text-white hover:text-yellow-400 transition-colors duration-200 text-sm opacity-75 hover:opacity-100"
                     >
                       {link.label}
                     </a>
@@ -90,13 +90,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-display font-semibold text-pixel-gold mb-4">Support</h4>
+              <h4 className="eco-title mb-4">Support</h4>
               <ul className="space-y-2">
                 {footerLinks.support.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="text-muted-foreground hover:text-pixel-gold transition-colors duration-200 text-sm"
+                      className="text-white hover:text-yellow-400 transition-colors duration-200 text-sm opacity-75 hover:opacity-100"
                     >
                       {link.label}
                     </a>
@@ -106,13 +106,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-display font-semibold text-pixel-gold mb-4">Organization</h4>
+              <h4 className="eco-title mb-4">Organization</h4>
               <ul className="space-y-2">
                 {footerLinks.organization.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="text-muted-foreground hover:text-pixel-gold transition-colors duration-200 text-sm"
+                      className="text-white hover:text-yellow-400 transition-colors duration-200 text-sm opacity-75 hover:opacity-100"
                     >
                       {link.label}
                     </a>
@@ -122,13 +122,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-display font-semibold text-pixel-gold mb-4">Legal</h4>
+              <h4 className="eco-title mb-4">Legal</h4>
               <ul className="space-y-2">
                 {footerLinks.legal.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href}
-                      className="text-muted-foreground hover:text-pixel-gold transition-colors duration-200 text-sm"
+                      className="text-white hover:text-yellow-400 transition-colors duration-200 text-sm opacity-75 hover:opacity-100"
                     >
                       {link.label}
                     </a>
@@ -140,12 +140,12 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="card-medieval mb-12">
+        <div className="nes-container mb-12">
           <div className="text-center">
-            <h4 className="font-display text-xl font-semibold text-pixel-gold mb-4">
+            <h4 className="eco-title text-xl mb-4">
               Join the Adventure
             </h4>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="mb-6 max-w-2xl mx-auto">
               Get updates on new content, educational resources, and community events. 
               Perfect for educators and climate advocates.
             </p>
@@ -153,9 +153,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-background border border-pixel-bronze rounded-none text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-pixel-gold"
+                className="nes-input flex-1"
               />
-              <button className="btn-medieval">
+              <button className="nes-btn is-primary">
                 Subscribe
               </button>
             </div>
@@ -163,8 +163,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-pixel-bronze pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="border-t border-yellow-400 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-75">
             <div className="flex items-center gap-2">
               <span>© {currentYear} EcoQuest. Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
@@ -182,7 +182,4 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
-
 export default Footer;
