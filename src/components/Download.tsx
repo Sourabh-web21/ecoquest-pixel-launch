@@ -108,9 +108,7 @@ const DownloadSection = () => {
                 <Smartphone className="w-5 h-5 text-pixel-gold mr-2" />
                 <span className="font-medium text-foreground">Mobile Version Coming Soon</span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                iOS and Android versions are in development for 2024 release.
-              </p>
+              
             </div>
           </div>
 
@@ -156,7 +154,7 @@ const DownloadSection = () => {
             </div>
 
             {/* Support Note */}
-            <div className="bg-gradient-forest/20 border border-pixel-bronze rounded p-6">
+            {/*<div className="bg-gradient-forest/20 border border-pixel-bronze rounded p-6">
               <h5 className="font-display font-semibold text-pixel-gold mb-3">
                 Need Help Getting Started?
               </h5>
@@ -171,7 +169,7 @@ const DownloadSection = () => {
               >
                 Contact Support
               </Button>
-            </div>
+            </div>*/}
           </div>
         </div>
 

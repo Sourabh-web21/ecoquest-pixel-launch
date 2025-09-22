@@ -43,6 +43,7 @@ const Team = () => {
       description: "PhD in Climate Science, ensures all game content is scientifically accurate and engaging.",
       skills: ["Climate Science", "Curriculum Design", "Research"],
       social: {
+        github: "#",
         linkedin: "#",
         email: "ankitmahto19012005@gmail.com"
       },
@@ -68,6 +69,7 @@ const Team = () => {
       description: "Former teacher with expertise in making complex science concepts accessible to students.",
       skills: ["Pedagogy", "Curriculum", "Assessment"],
       social: {
+        github: "#",  
         linkedin: "#",
         email: "lisa@ecoquest.game"
       },
