@@ -1,10 +1,17 @@
 import { Github, Linkedin, Mail } from "lucide-react";
-import teamPortraits from "@/assets/team-portraits.jpg";
+/*import teamPortraits from "@/assets/team-portraits.jpg";*/
+import ayushPortrait from "@/assets/ayush.jpg";
+import saurabhPortrait from "@/assets/saurabh.jpg";
+import ankitPortrait from "@/assets/ankit.jpg";
+import afnaanPortrait from "@/assets/afnaan.jpg";
+import niharaPortrait from "@/assets/nihara.jpg";
+import somshekharPortrait from "@/assets/somshekhar.jpg";
+
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "Ayush Shrivastava",
       role: "Lead Developer",
       title: "Code Wizard",
       description: "10+ years in game development, Godot expert, passionate about educational technology.",
@@ -13,10 +20,11 @@ const Team = () => {
         github: "#",
         linkedin: "#",
         email: "alex@ecoquest.game"
-      }
+      },
+      image: ayushPortrait
     },
     {
-      name: "Maya Rodriguez",
+      name: "Saurabh Agarwal",
       role: "Art Director", 
       title: "Pixel Mage",
       description: "Award-winning pixel artist specializing in environmental themes and character design.",
@@ -25,21 +33,23 @@ const Team = () => {
         github: "#",
         linkedin: "#", 
         email: "maya@ecoquest.game"
-      }
+      },
+      image: saurabhPortrait
     },
     {
-      name: "Dr. Sarah Johnson",
+      name: "Ankit Mahto",
       role: "Climate Scientist",
       title: "Environmental Sage",
       description: "PhD in Climate Science, ensures all game content is scientifically accurate and engaging.",
       skills: ["Climate Science", "Curriculum Design", "Research"],
       social: {
         linkedin: "#",
-        email: "sarah@ecoquest.game"
-      }
+        email: "ankitmahto19012005@gmail.com"
+      },
+      image: ankitPortrait
     },
     {
-      name: "James Park",
+      name: "Afnaan Kaif",
       role: "Game Designer",
       title: "Quest Architect", 
       description: "15+ years designing educational games that balance fun with effective learning outcomes.",
@@ -48,10 +58,11 @@ const Team = () => {
         github: "#",
         linkedin: "#",
         email: "james@ecoquest.game"
-      }
+      },
+      image: afnaanPortrait
     },
     {
-      name: "Lisa Thompson",
+      name: "Nihara Rajesh",
       role: "Education Specialist",
       title: "Learning Oracle",
       description: "Former teacher with expertise in making complex science concepts accessible to students.",
@@ -59,10 +70,11 @@ const Team = () => {
       social: {
         linkedin: "#",
         email: "lisa@ecoquest.game"
-      }
+      },
+      image: niharaPortrait
     },
     {
-      name: "Marcus Williams",
+      name: "Somshekhar Pandey",
       role: "Project Manager",
       title: "Guild Master",
       description: "Agile expert keeping our diverse team focused on creating impactful educational experiences.",
@@ -71,7 +83,8 @@ const Team = () => {
         github: "#",
         linkedin: "#",
         email: "marcus@ecoquest.game"
-      }
+      },
+      image: somshekharPortrait   
     }
   ];
 
@@ -97,19 +110,16 @@ const Team = () => {
               key={index}
               className="card-medieval group hover:scale-105 transition-all duration-300 hover:shadow-glow"
             >
-              {/* Avatar */}
-              <div className="relative mb-6">
-                <div 
-                  className="w-24 h-24 mx-auto rounded-full border-4 border-pixel-bronze bg-cover bg-center bg-no-repeat"
-                  style={{ 
-                    backgroundImage: `url(${teamPortraits})`,
-                    backgroundPosition: `${(index % 3) * 33.33}% ${Math.floor(index / 3) * 50}%`
-                  }}
-                />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pixel-gold text-pixel-shadow px-3 py-1 rounded-full">
-                  <span className="font-pixel text-xs">{member.title}</span>
-                </div>
-              </div>
+          {/* Avatar */}
+          <div className="relative mb-6">
+            <div 
+              className="w-24 h-24 mx-auto rounded-full border-4 border-pixel-bronze bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${member.image})` }}
+            />
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-pixel-gold text-pixel-shadow px-3 py-1 rounded-full">
+              <span className="font-pixel text-xs">{member.title}</span>
+            </div>
+          </div>
 
               {/* Content */}
               <div className="text-center">
